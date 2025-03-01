@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Server</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('hospitals') }}">Hospitals</a>
+            <a href="{{ url_for('server') }}">Central Server</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+        </nav>
+    </header>
+    
+    <section class="server-details">
+        <h2>Central Server Role</h2>
+        <p>The central server initializes the global AI model and distributes it to participating hospitals. It aggregates the trained model updates from each hospital, improving the global model's accuracy. The improved model is then sent back to the hospitals for further training.</p>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload X-Ray for Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('hospitals') }}">Hospitals</a>
+            <a href="{{ url_for('server') }}">Central Server</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Pneumonia Prediction</h1>
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <br>
+        <button id="predictButton" onclick="predict()">Predict</button>
+        <div class="loader" id="loader"></div>
+
+        <!-- Uploaded Images Preview -->
+        <h3>Uploaded Images</h3>
+        <div id="imagePreviews"></div>
+
+       
+        <!-- Prediction Results -->
+        <div id="results"></div>
+        <div class="progress-container">
+            <div class="progress-bar" id="confidenceBar"></div>
+        </div>
+
+        
+
+        <!-- Move Prediction History Below -->
+        <h3>Prediction History</h3>
+        <div id="predictionHistory"></div>
+
+        <!-- Reset History -->
+        <button id="resetHistory" onclick="clearHistory()">Reset History</button>
+        <!-- Display Prediction Results -->
+        <h3>Prediction Results</h3>
+        <div id="results"></div>
+
+        <br>
+        <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <!-- ✅ Voice Control Button -->
+        <button onclick="startListening()">🎤 Activate Voice Control</button>
+    </div>
+ 
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

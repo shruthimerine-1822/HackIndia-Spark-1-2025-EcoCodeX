@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-slider image1 show"></div>
+    <div class="background-slider image2 slide-in-left"></div>
+    <div class="background-slider image3 slide-in-right"></div>
+
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('hospitals') }}">Hospitals</a>
+            <a href="{{ url_for('server') }}">Central Server</a>
+            <a href="{{ url_for('upload') }}">Upload</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hospital-content">
+            <h2>Participating Hospitals</h2>
+            <div class="hospital">
+                <h3>Hospital A</h3>
+                <p>Location: City A</p>
+                <p>Lung X-ray Dataset: 5,000 images</p>
+            </div>
+            <div class="hospital">
+                <h3>Hospital B</h3>
+                <p>Location: City B</p>
+                <p>Lung X-ray Dataset: 8,000 images</p>
+            </div>
+            <div class="hospital">
+                <h3>Hospital C</h3>
+                <p>Location: City C</p>
+                <p>Lung X-ray Dataset: 10,000 images</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
